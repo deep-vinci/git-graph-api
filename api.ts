@@ -34,6 +34,8 @@ const parseData = (req: Request, res: Response, next: NextFunction): void => {
     try {
         const doc = new JSDOM(req.fetchedData).window;
 
+        // todo: also get tooltip textContent and get the number of contributions from it
+
         let parsedArr: ParsedData = [];
         doc.document.querySelectorAll("tr").forEach((e, i) => {
             if (i !== 0) {
