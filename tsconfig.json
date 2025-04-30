@@ -121,7 +121,7 @@
 
         // Ensure your type files are included
     },
-    "files": ["types.d.ts"],
+    "files": ["api/types.d.ts"],
     "exclude": ["node_modules"],
-    "include": ["*.ts"]
+    "include": ["*.ts", "api/types.d.ts", "api/api.ts"]
 }
