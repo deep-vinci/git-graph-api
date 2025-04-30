@@ -76,6 +76,20 @@ const flattenData = (parsedArr: ParsedData): ContributionCell[] => {
     return parsedArr.flat();
 };
 
+app.get("/", (req: Request, res: Response): void => {
+    res.json({
+        version: "1.0",
+        endpoints: [
+            { method: "GET", path: "/", description: "This page" },
+            {
+                method: "GET",
+                path: "/u/{id}",
+                description: "Get user contribution by ID",
+            },
+        ],
+    });
+});
+
 app.get(
     "/u/:user",
     fetchData,
